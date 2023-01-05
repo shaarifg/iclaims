@@ -1,6 +1,6 @@
-#Working on client side
+# Working on client side
 
-Explore server-side (backend) code for now...4
+Explore server-side (backend) code for now...
 
 soon I will push frontent code...
 
