@@ -3,8 +3,8 @@ const ClaimSchema = new mongoose.Schema(
     {
         name: String,
         hospital: String,
-        age:Number,
-        phone:Number,
+        age:String,
+        phone:String,
         address:{
             type:String,
         },

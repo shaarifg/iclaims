@@ -27,6 +27,19 @@ const createClaim = (claimData) =>{
     })
 }
 
+const getAllClaims = () =>{
+    return new Promise( async(reject, resolve)=>{
+        const claims = await claimModel.find()
+        // console.log(claim);
+        if (!claims) {
+            reject({ message: "Claims not found 🎈", status: 500 })
+         }
+         else {
+             resolve({ message: "FOUND ALL claims successfully ✔😊", status: 201, claims:claims})
+         }
+     })
+}
+
 
 //Function to get a claim by it's id
 const getClaimById = (id) =>{
@@ -103,6 +116,7 @@ const deleteClaim =(claimId)=>{
 module.exports ={
     createClaim,
     getClaimById,
+    getAllClaims,
     getAllClaimsByPolicyId,
     getCliamsByHospitalAndDate,
     updateClaim,

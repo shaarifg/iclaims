@@ -7,7 +7,8 @@ const {
     getAllClaimsByPolicyId, 
     getCliamsByHospitalAndDate, 
     updateClaim, 
-    deleteClaim} = require('./claim.controller');
+    deleteClaim,
+    getAllClaims} = require('./claim.controller');
 
 
 //Create a new claim
@@ -21,6 +22,20 @@ router.post('/claims', (req, res)=>{
         res.status(error.status).send(error)
     })
 }) 
+
+
+// * Get all claims
+router.get('/claims', (req, res)=>{
+    res.header("Access-Control-Allow-Origin", "*");
+    // console.log(req.body);
+    getAllClaims()
+    .then((response)=>{
+        res.status(response.status).send(response)
+    })
+    .catch((error)=>{
+        res.status(error.status).send(error)
+    })
+})
 
 //Get an claim by its id
 router.get('/claims/:id',(req, res)=>{

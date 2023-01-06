@@ -1,12 +1,12 @@
 
 const serverConfig ={
-    port:3000,
+    port:8080,
     hostname:'localhost'
 }
 
 //Database congiguration
 const dbConfig = {
-    mongoUrl: "mongodb+srv://sharifg:MyData@890@first.sfh7pc2.mongodb.net/claims?retryWrites=true&w=majority"
+    mongoUrl: "mongodb+srv://sharifg:mydata@first.sfh7pc2.mongodb.net/claims?retryWrites=true&w=majority"
 }
 
 const authConfig ={
