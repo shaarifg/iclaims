@@ -5,7 +5,7 @@ const {
     createClaim, 
     getClaimById, 
     getAllClaimsByPolicyId, 
-    getCliamsByHospitalAndDate, 
+    getCliamsByHospitalName, 
     updateClaim, 
     deleteClaim,
     getAllClaims} = require('./claim.controller');
@@ -37,7 +37,7 @@ router.get('/claims', (req, res)=>{
     })
 })
 
-//Get an claim by its id
+//* Get a claim by its id
 router.get('/claims/:id',(req, res)=>{
     console.log(req.params.id);
     getClaimById(req.params.id)
@@ -49,7 +49,7 @@ router.get('/claims/:id',(req, res)=>{
     })
 } )
     
-//Get all claims for given policy id  
+//* Get all claims for given policy id  
 router.get('/claims/policy/:id', (req, res)=>{
     getAllClaimsByPolicyId(req.params.id)
     .then((response)=>{
@@ -60,12 +60,12 @@ router.get('/claims/policy/:id', (req, res)=>{
     })
 }); 
 
-//Get all claims for given hospital Name and claim date
+//*Get all claims for given hospital Name
 router.get('/claims', (req, res)=>{
-    if(req.query.hospital=='' || req.query.date=='') res.end('Enter Hospital name and claim date')
+    if(req.query.hospital=='') res.end('Enter Hospital name and claim date')
     else{
-    const {hospital, date} = req.query
-    getCliamsByHospitalAndDate( {hospital, date} )
+    const {hospital} = req.query
+    getCliamsByHospitalName( {hospital} )
     .then((response)=>{
         res.status(response.status).send(response)
     })

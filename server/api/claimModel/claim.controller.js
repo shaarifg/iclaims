@@ -71,15 +71,15 @@ const getAllClaimsByPolicyId = (policyId)=>{
 
 
 // Function to Get all claims for given hospital name and claim date
-const getCliamsByHospitalAndDate =({hospital, date})=>{
+const getCliamsByHospitalName =({hospital})=>{
     return new Promise( async(reject, resolve)=>{
-        const claims = await claimModel.find({hospital:hospital, date:date})
+        const claims = await claimModel.find({hospital:hospital})
         // console.log(claim);
         if (!claims) {
             reject({ message: "Claims not found 🎈", status: 500 })
          }
          else {
-             resolve({ message: "FOUND all claims for given hospital name and claim date successfully ✔😊", status: 201, claims:claims})
+             resolve({ message: "FOUND all claims for given hospital name successfully ✔😊", status: 201, claims:claims})
          }
      })
 }
@@ -118,7 +118,7 @@ module.exports ={
     getClaimById,
     getAllClaims,
     getAllClaimsByPolicyId,
-    getCliamsByHospitalAndDate,
+    getCliamsByHospitalName,
     updateClaim,
     deleteClaim
 }
