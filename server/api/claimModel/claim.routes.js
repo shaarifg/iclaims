@@ -25,7 +25,7 @@ router.post('/claims', (req, res)=>{
 
 
 // * Get all claims
-router.get('/claims', (req, res)=>{
+router.get('/all-claims', (req, res)=>{
     res.header("Access-Control-Allow-Origin", "*");
     // console.log(req.body);
     getAllClaims()
@@ -38,7 +38,7 @@ router.get('/claims', (req, res)=>{
 })
 
 //* Get a claim by its id
-router.get('/claims/:id',(req, res)=>{
+router.get('/claim/:id',(req, res)=>{
     console.log(req.params.id);
     getClaimById(req.params.id)
     .then((response)=>{
@@ -62,7 +62,9 @@ router.get('/claims/policy/:id', (req, res)=>{
 
 //*Get all claims for given hospital Name
 router.get('/claims', (req, res)=>{
-    if(req.query.hospital=='') res.end('Enter Hospital name and claim date')
+    console.log('Sharif')
+    console.log(req.query.hospital)
+    if(req.query.hospital=='') res.end('Please Enter Hospital Name')
     else{
     const {hospital} = req.query
     getCliamsByHospitalName( {hospital} )
@@ -77,7 +79,7 @@ router.get('/claims', (req, res)=>{
 });
 
 //Update the claim status by its id
-router.put('/claims/:id', (req, res)=>{
+router.put('/claim/:id', (req, res)=>{
     // console.log(req.params.id);
     updateClaim(req.params.id, req.body)
     .then((response)=>{
