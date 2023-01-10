@@ -39,7 +39,7 @@ router.get('/all-claims', (req, res)=>{
 
 //* Get a claim by its id
 router.get('/claim/:id',(req, res)=>{
-    console.log(req.params.id);
+    // console.log(req.params.id);
     getClaimById(req.params.id)
     .then((response)=>{
         res.status(response.status).send(response)
@@ -78,7 +78,7 @@ router.get('/claims', (req, res)=>{
     
 });
 
-//Update the claim status by its id
+//*Update the claim status by its id
 router.put('/claim/:id', (req, res)=>{
     // console.log(req.params.id);
     updateClaim(req.params.id, req.body)
@@ -93,7 +93,7 @@ router.put('/claim/:id', (req, res)=>{
 
 
 //Delete a claim by claim id 
-router.delete('/claims/:id', (req, res)=>{
+router.delete('/claim/:id', (req, res)=>{
     // console.log(req.params.id);
     deleteClaim(req.params.id)
     .then((response)=>{

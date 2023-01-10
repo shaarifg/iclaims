@@ -17,8 +17,7 @@ const ClaimSchema = new mongoose.Schema(
             required:true 
         },
         date: {
-            type:String,
-            default:Date.now(),
+            type:String,      
         },
     }
 );
