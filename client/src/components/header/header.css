@@ -1,0 +1,27 @@
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #001122;
+    position: sticky;
+    top: 0;color: white;
+    padding: 0 1rem;
+
+}
+.logo_text{
+    font-family: 'Righteous';
+    font-size: 36px;
+}
+.nav_links{
+    display: flex;
+    list-style: none;
+}
+.nav_links>li{
+    padding: 0 1rem;
+    color: white;
+    text-decoration: none;
+}
+.link_text{
+    text-decoration: none;
+color: red;
+}

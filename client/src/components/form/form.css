@@ -1,0 +1,34 @@
+.filter_form{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+}
+.input_btn>input{
+    outline: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: .3rem;
+    border-right: none
+
+}
+.filter_form>label>select{
+    font-size: 14px;
+    font-weight: 600;
+    padding: .3rem;
+    background-color: #F7770F;
+}
+.search_btn{
+    padding: .5rem;
+    border: none;
+    font-weight: bold;
+    background-color: #001122;
+    color: white;
+    cursor: pointer;
+    transition: 1s ease-in-out;
+}
+.search_btn:hover{
+    background-color: rgb(16, 36, 75);
+}

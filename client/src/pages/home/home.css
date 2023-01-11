@@ -1,0 +1,84 @@
+#hero_section{
+    background: url('../../components/footer/footer.svg')no-repeat center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    min-height: 40vh;
+}
+.main_pic>img{
+    max-width: 300px;
+    display: block;
+    user-select: none;
+}
+
+.about_app{
+    max-width: 450px;
+    
+}
+.app_desc{
+    text-align: left;
+    font-size: 14px;
+    margin-top: 1rem;
+    user-select: none;
+}
+.section_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.use_cards_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.use_card{
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    background: #001122;
+    padding: 1rem;
+    transition: 0.3s ease-in;
+    color: white;
+} 
+.use_card:hover{
+    background: #0d3968;   
+}
+
+
+.tech_svgs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+.tech_svgs>.svg img{
+    width: 100px;
+    display: block;
+}
+.svg{
+    border: 1px solid rgb(221, 221, 221);
+    box-shadow: 1px 0 1px rgb(221, 221, 221);
+    padding: 1rem;
+}
+.svg>p{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 450px) {
+   .main_pic{
+    display: none;
+   }
+  }
