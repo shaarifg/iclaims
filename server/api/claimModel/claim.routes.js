@@ -50,8 +50,8 @@ router.get('/claim/:id',(req, res)=>{
 } )
     
 //* Get all claims for given policy id  
-router.get('/claims/policy/:id', (req, res)=>{
-    getAllClaimsByPolicyId(req.params.id)
+router.get('/claims/policyId', (req, res)=>{
+    getAllClaimsByPolicyId(req.query.policyId)
     .then((response)=>{
         res.status(response.status).send(response)
     })
@@ -61,7 +61,7 @@ router.get('/claims/policy/:id', (req, res)=>{
 }); 
 
 //*Get all claims for given hospital Name
-router.get('/claims', (req, res)=>{
+router.get('/claims/hospital', (req, res)=>{
     console.log('Sharif')
     console.log(req.query.hospital)
     if(req.query.hospital=='') res.end('Please Enter Hospital Name')
