@@ -13,3 +13,10 @@ export const setClaim =(claim) =>{
         payload:claim,
     }
 }
+export const setDelete =(search) =>{
+    return{
+        type:ACTIONS.SET_SEARCH,
+        payload:search
+
+    }
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import UseCaseLiveFilter from '../UseCaseLiveFilter';
 
 import { Link } from "react-router-dom";
@@ -11,7 +11,9 @@ import materialIcon from './assets/material-ui.svg'
 import hero from '../claim/assets/hero.svg'
 import "./home.css";
 import Form from "../../components/form/Form";
+import ClaimCard from "../claim/ClaimCard";
 const Home = () => {
+  const [search, setSearch] = useState(true)
   return (
     <>
       <section id="hero_section">
@@ -28,7 +30,6 @@ const Home = () => {
         <img src={hero} alt="" />
         </div>
       </section>
-{}
       <section id="use_section" className="section_container">
         <h3>How To Use This Website</h3>
         <div className="use_cards_wrapper">
@@ -62,8 +63,11 @@ const Home = () => {
       <section id="search_section" className="section_container">
         <h3>Search Any Claim</h3>
         <Form/>
+        {
+          search && <ClaimCard/>
+        }
+        
       </section>
-
       <section id="tech_section" className="section_container">
         <h3>Technologies Used</h3>
         <div className="tech_svgs">

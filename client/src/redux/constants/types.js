@@ -1,5 +1,6 @@
 export const ACTIONS={
     SET_CLAIMS:"SET_CLAIMS",
     SET_CLAIM:"SET_CLAIM",
-    EDIT:"EDIT"
+    EDIT:"EDIT",
+    SET_SEARCH:'SET_SEARCH'
 }
