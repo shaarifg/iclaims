@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { setClaim } from "../../redux/actions/claimActions";
 import React from "react";
 
-import './assets/editClaim.css'
+import "./assets/editClaim.css";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,7 +18,7 @@ const EditClaim = () => {
   const [formData, setFormData] = useState(claim);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  
+
   const handleChange = (e) => {
     // console.log(formData);
     setFormData({
@@ -26,18 +26,18 @@ const EditClaim = () => {
       [e.target.name]: e.target.value,
     });
   };
-  
+
   const updateClaim = async (e) => {
     e.preventDefault();
     await axios
-    .put(`http://localhost:8080/api/claim/${id}`, formData)
-    .then((res) => {
-      toast.success(res.message, {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-      console.log(res.data);
-    })
-    .catch((error) => console.log(error));
+      .put(`http://localhost:8080/api/claim/${id}`, formData)
+      .then((res) => {
+        toast.success(res.message, {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+        console.log(res.data);
+      })
+      .catch((error) => console.log(error));
     // console.log(res.data.message)
     setFormData("");
     navigate("/all-claims");
@@ -54,7 +54,7 @@ const EditClaim = () => {
   }, []);
   return (
     <section className="edit_claim">
-    <h2>Update The Claim</h2>
+      <h2>Update The Claim</h2>
       <form action="" className="update_claim" onSubmit={updateClaim}>
         <div className="input_item">
           <label htmlFor="policyId">PolicyId:</label>
@@ -100,10 +100,10 @@ const EditClaim = () => {
         </div>
         <div className="input_item">
           <label htmlFor="status">Status:</label>
-          <select name="status" id="" onChange={handleChange} className=''>
-          <option value="open">Open</option>
-          <option value="closed">Closed</option>
-          <option value="In-Progress">In-Progress</option>
+          <select name="status" id="" onChange={handleChange} className="">
+            <option value="open">Open</option>
+            <option value="closed">Closed</option>
+            <option value="In-Progress">In-Progress</option>
           </select>
         </div>
         <div className="input_item">
@@ -117,10 +117,23 @@ const EditClaim = () => {
           />
         </div>
         <div className="update_btns">
-        <Button to='/all-claims' variant="contained" className="btn" onClick={()=>navigate('/all-claims')}>All Claims</Button>
-        <Button variant="contained" type="submit" className="btn">
-          Update Claim
-        </Button>
+          <Button
+            to="/all-claims"
+            variant="contained"
+            className="btn"
+            onClick={() => navigate("/all-claims")}
+            sx={{ backgroundColor: "#F7770F" }}
+          >
+            All Claims
+          </Button>
+          <Button
+            variant="contained"
+            type="submit"
+            className="btn"
+            sx={{ backgroundColor: "#F7770F" }}
+          >
+            Update Claim
+          </Button>
         </div>
         <ToastContainer />
       </form>
