@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HamburgerMenu from "../../pages/home/HamburgerMenu";
+import HamburgerMenu from "../hamburger/HamburgerMenu";
 
 // * CSS for HEADER
 import "./header.css";
