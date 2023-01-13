@@ -58,3 +58,9 @@
     border-radius: 50%;
 }
 /* CSS For Filter Form */
+@media screen and (max-width:300px) {
+    .card_item{
+        max-width: 12rem;
+    }
+    
+}
