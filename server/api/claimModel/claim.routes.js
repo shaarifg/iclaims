@@ -13,7 +13,7 @@ const {
 
 //Create a new claim
 router.post('/claims', (req, res)=>{
-    console.log(req.body);
+    // console.log(req.body);
     createClaim(req.body)
     .then((response)=>{
         res.status(response.status).send(response)
