@@ -94,6 +94,12 @@
     margin-bottom: 1rem;
 }
 
+#search_section{
+    scroll-margin-top: 3rem;
+}
+
+/* Media Queries */
+
 @media screen and (max-width: 450px) {
    .main_pic{
     display: none;

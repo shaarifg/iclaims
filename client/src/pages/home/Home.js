@@ -52,7 +52,8 @@ const Home = () => {
           <div className="use_card">
             <h4>You can see all available Claims</h4>
             <p>
-              To see all the created claims press the button below or go to See All Claims page.
+              To see all the created claims press the button below or go to See
+              All Claims page.
             </p>
             <Link to="/all-claims" className="use_btns">
               See All Claims
@@ -61,7 +62,8 @@ const Home = () => {
           <div className="use_card">
             <h4>You can Search a Claim</h4>
             <p>
-              You can Search any claim by entering Beneficiary's Name, PolicyID or Hospital Name.
+              You can Search any claim by entering Beneficiary's Name, PolicyID
+              or Hospital Name.
             </p>
             <a href="#search_section" className="use_btns">
               Search Any Claim
