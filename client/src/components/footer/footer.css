@@ -9,7 +9,6 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin-top: 1rem;
 }
 
 
@@ -23,7 +22,7 @@
 }
 
 .about_me {
-    max-width: 300px;
+    max-width:24rem;
 }
 .my_pic{
     width:12rem;

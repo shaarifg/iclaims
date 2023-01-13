@@ -23,5 +23,11 @@
 }
 .link_text{
     text-decoration: none;
-color: red;
+    color: #F7770F;
+}
+
+@media screen and (max-width: 663px) {
+    .big{
+        display: none;
+    }
 }

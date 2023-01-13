@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import HamburgerMenu from "../../pages/home/HamburgerMenu";
 
 // * CSS for HEADER
 import "./header.css";
@@ -12,7 +13,8 @@ const Header = () => {
         <span className="logo_text" >iClaims</span>
       </div>
       <nav>
-        <ul className="nav_links">
+      <HamburgerMenu/>
+        <ul className="nav_links big">
           <li>
             <a href="/" className="link_text" >
               Home

@@ -5,19 +5,24 @@
     justify-content: center;
     gap: 1rem;
     align-items: center;
+    margin: 1rem 0;
 }
+.input_btn{
+    border: 2px solid #001122;
+}
+
 .input_btn>input{
     outline: none;
     font-size: 14px;
     font-weight: 600;
-    padding: .3rem;
-    border-right: none
-
+    padding: .4rem;
+    border-right: none;
+    border: none;
 }
 .filter_form>label>select{
     font-size: 14px;
     font-weight: 600;
-    padding: .3rem;
+    padding: .5rem;
     background-color: #F7770F;
 }
 .search_btn{
@@ -28,6 +33,7 @@
     color: white;
     cursor: pointer;
     transition: 1s ease-in-out;
+    height: 100%;
 }
 .search_btn:hover{
     background-color: rgb(16, 36, 75);

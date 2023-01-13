@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import "./assets/allClaims.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setClaims } from "../../redux/actions/claimActions";
 import Form from "../../components/form/Form";
@@ -29,7 +28,7 @@ const AllClaims = () => {
     fetchAllClaims();
   }, [del]);
   return (
-    <section id="claims_list_section">
+    <section id="claims_list_section" className="section_container">
       <Form />
       <ClaimCard />
     </section>

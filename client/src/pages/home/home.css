@@ -25,12 +25,16 @@
     margin-top: 1rem;
     user-select: none;
 }
-.section_container{
+
+.title_desc{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    margin: 1rem 0;
+    text-align: justify;
+    justify-content: center;
+}
+.title_desc>h5{
+    color: gray;
 }
 
 .use_cards_wrapper{
@@ -38,6 +42,7 @@
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+    margin-top: 1rem;
 }
 
 .use_card{
@@ -53,15 +58,27 @@
     color: white;
 } 
 .use_card:hover{
-    background: #0d3968;   
+    background: #042344;   
 }
 
+.use_btns{
+    border: 1px solid white;
+    padding: .5rem;
+    border-radius: 1rem;
+    color: white;
+    text-decoration: none;
+    transition: .5s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+.use_btns:hover{
+    background-color: #001122;
+}
 
 .tech_svgs{
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+    margin-top:1rem ;
 }
 .tech_svgs>.svg img{
     width: 100px;
