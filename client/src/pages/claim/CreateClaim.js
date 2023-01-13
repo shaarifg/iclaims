@@ -1,17 +1,16 @@
 import axios from "axios";
-import React, {useState } from "react";
+import React, { useState } from "react";
 
 import "./assets/createClaim.css";
 
-import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
-import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
-import PersonIcon from '@mui/icons-material/Person';
-import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
-import BusinessIcon from '@mui/icons-material/Business';
-import PolicyIcon from '@mui/icons-material/Policy';
-import DonutSmallIcon from '@mui/icons-material/DonutSmall';
-import TodayIcon from '@mui/icons-material/Today';
-
+import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
+import PanoramaFishEyeIcon from "@mui/icons-material/PanoramaFishEye";
+import PersonIcon from "@mui/icons-material/Person";
+import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
+import BusinessIcon from "@mui/icons-material/Business";
+import PolicyIcon from "@mui/icons-material/Policy";
+import DonutSmallIcon from "@mui/icons-material/DonutSmall";
+import TodayIcon from "@mui/icons-material/Today";
 
 const initialValues = {
   name: "",
@@ -56,7 +55,7 @@ const CreateClaim = () => {
         <form action="" method="post" onSubmit={postClaim}>
           <div className="item">
             <div className="item_input">
-            <LocalHospitalIcon/>
+              <LocalHospitalIcon />
               <input
                 type="text"
                 id="hospital"
@@ -69,7 +68,7 @@ const CreateClaim = () => {
 
           <div className="item">
             <div className="item_input">
-            <PersonIcon/>
+              <PersonIcon />
               <input
                 type="text"
                 id="name"
@@ -82,7 +81,7 @@ const CreateClaim = () => {
 
           <div className="item">
             <div className="item_input">
-            <PanoramaFishEyeIcon/>
+              <PanoramaFishEyeIcon />
               <input
                 type="text"
                 id="age"
@@ -95,7 +94,7 @@ const CreateClaim = () => {
 
           <div className="item">
             <div className="item_input">
-            <PhoneAndroidIcon/>
+              <PhoneAndroidIcon />
               <input
                 type="text"
                 id="phone"
@@ -108,7 +107,7 @@ const CreateClaim = () => {
 
           <div className="item">
             <div className="item_input">
-            <BusinessIcon/>
+              <BusinessIcon />
               <input
                 type="text"
                 id="address"
@@ -121,7 +120,7 @@ const CreateClaim = () => {
           </div>
           <div className="item">
             <div className="item_input">
-            <PolicyIcon/>
+              <PolicyIcon />
               <input
                 type="text"
                 id="policyId"
@@ -134,18 +133,23 @@ const CreateClaim = () => {
           </div>
           <div className="item">
             <div className="item_input">
-            <DonutSmallIcon/>
-              <select name="status" id="" onChange={handleChange} className='status_select'>
-              <option value="open">Status</option>
-              <option value="open">Open</option>
-              <option value="closed">Closed</option>
-              <option value="In-Progress">In-Progress</option>
+              <DonutSmallIcon />
+              <select
+                name="status"
+                id=""
+                onChange={handleChange}
+                className="status_select"
+              >
+                <option value="open">Status</option>
+                <option value="open">Open</option>
+                <option value="closed">Closed</option>
+                <option value="In-Progress">In-Progress</option>
               </select>
             </div>
           </div>
           <div className="item">
             <div className="item_input">
-            <TodayIcon/>
+              <TodayIcon />
               <input
                 type="date"
                 id="date"
@@ -161,10 +165,6 @@ const CreateClaim = () => {
           </button>
         </form>
       </div>
-      {
-
-        // <div className="app_details">I am Left Please Update me</div>
-      }
     </section>
   );
 };

@@ -58,11 +58,15 @@
     opacity: 1; /* Firefox */
   }
 
-  .btn{
-    background: #001122;
+.btn{
+    background: #d66000;
     border: none;
     padding: .4rem; 
     cursor: pointer;
     margin-top: 1rem;
+    color: white;
     transition: .5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  }
+}
+.btn:hover{
+    background: #f26d00;
+}

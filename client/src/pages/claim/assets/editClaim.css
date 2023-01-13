@@ -35,13 +35,6 @@
     outline: none;
 }
 
-.btn{
-    background-color: red;
-    font-weight: bold;
-}
-.btn:hover{
-    background-color: #e76800;
-}
 
 .update_btns{
     display: flex;
