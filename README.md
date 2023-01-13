@@ -2,7 +2,6 @@
 
 Explore code for now...
 
-soon I will push frontent code...
 
 
 Happy Coding...😎🚀🚀
