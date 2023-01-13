@@ -12,14 +12,16 @@ import hero from '../claim/assets/hero.svg'
 import "./home.css";
 import Form from "../../components/form/Form";
 import ClaimCard from "../claim/ClaimCard";
+import { useSelector } from "react-redux";
 const Home = () => {
-  const [search, setSearch] = useState(true)
+  const search = useSelector(state => state.search.search)
+  console.log(search)
   return (
     <>
       <section id="hero_section">
         <div className="about_app">
           <h1>Welcome To iClaims</h1>
-          <p>An Insurance Claim Management System</p>
+          <p>An Insurance Claims Management System</p>
           <p className="app_desc">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere in
             nemo asperiores voluptatum minima quis nobis nostrum nesciunt,

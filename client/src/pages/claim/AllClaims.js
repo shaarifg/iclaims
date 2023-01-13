@@ -10,11 +10,10 @@ import ClaimCard from "./ClaimCard";
 const AllClaims = () => {
   const claims = useSelector((state) => state.allClaims.claims.claims);
   console.log(claims);
-  const del = useSelector((state)=> state.search.search)
+  const del = useSelector((state)=> state.search.delete)
   const [loading, setLoading] = useState(true);
-  const [deleted, setDeleted] = useState(del);
 
-  
+
   const dispatch = useDispatch();
   console.log(del);
 
@@ -24,7 +23,6 @@ const AllClaims = () => {
       .catch((error) => console.log(error));
     dispatch(setClaims(res.data));
     setLoading(!loading);
-    setDeleted(!deleted)
   };
 
   useEffect(() => {

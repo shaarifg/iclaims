@@ -5,17 +5,18 @@ import { Link } from "react-router-dom";
 import "./header.css";
 
 const Header = () => {
+  
   return (
     <header id="header">
       <div className="logo">
-        <span className="logo_text">iClaims</span>
+        <span className="logo_text" >iClaims</span>
       </div>
       <nav>
         <ul className="nav_links">
           <li>
-            <Link to="/" className="link_text">
+            <a href="/" className="link_text" >
               Home
-            </Link>
+            </a>
           </li>
           <li>
             <Link to="/create-claim" className="link_text">

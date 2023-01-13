@@ -21,28 +21,33 @@ const Footer = () => {
             necessitatibus, inventore voluptate?
           </p>
         </div>
+        <div className="my_pic">
+        </div>
         <div className="connect_me">
           <h3>Connect With Me</h3>
           <ul>
             <li >
-              <a href="" className="list_item">
+              <a href="https://mohd-sharif-portfolio.web.app/" 
+              target="_blank" className="list_item">
                 <LanguageIcon /> Portfolio
               </a>
             </li>
             <li >
-              <a href="" className="list_item">
+              <a href="https://in.linkedin.com/in/shaarifg?trk=people-guest_people_search-card" 
+              target="_blank"className="list_item">
                 <LinkedInIcon /> LinkedIn
               </a>
             </li>
             <li >
-              <a href="" className="list_item">
+              <a href="https://github.com/shaarifg" 
+              target="_blank" className="list_item">
                 <GitHubIcon /> Github
               </a>
             </li>
           </ul>
         </div>
       </div>
-      <div className="copyright">&copy; Copyright 2022, All rights are reserved | Mohd Sharif</div>
+      <div className="copyright">&copy; 2022, All rights are reserved | Mohd Sharif</div>
     </footer>
   );
 };

@@ -1,7 +1,8 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 
 import "./assets/createClaim.css";
+
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import PanoramaFishEyeIcon from '@mui/icons-material/PanoramaFishEye';
 import PersonIcon from '@mui/icons-material/Person';
@@ -11,7 +12,6 @@ import PolicyIcon from '@mui/icons-material/Policy';
 import DonutSmallIcon from '@mui/icons-material/DonutSmall';
 import TodayIcon from '@mui/icons-material/Today';
 
-// MUI Icons
 
 const initialValues = {
   name: "",
@@ -157,11 +157,14 @@ const CreateClaim = () => {
             </div>
           </div>
           <button className="btn" type="submit">
-            Create NewClaim
+            Create New Claim
           </button>
         </form>
       </div>
-      <div className="app_details">I am Left Please Update me</div>
+      {
+
+        // <div className="app_details">I am Left Please Update me</div>
+      }
     </section>
   );
 };

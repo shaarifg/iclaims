@@ -6,6 +6,8 @@ import Loader from "../../components/loader/Loader";
 import axios from "axios";
 import { setDelete } from "../../redux/actions/claimActions";
 
+import "./assets/claimCards.css";
+
 const ClaimCard = () => {
   const claims = useSelector((state) => state.allClaims.claims.claims);
   const dispatch = useDispatch();
@@ -26,7 +28,7 @@ const ClaimCard = () => {
         <Loader />
       ) : (
         <div>
-          Total Available Claims: {claims.length}
+          <h3>Total Available Claims: {claims.length}</h3>
           <div className="claim_cards">
             {claims.map((claim) => {
               return (

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./form.css";
-import { setClaims } from "../../redux/actions/claimActions";
+import { setClaims, setDelete, setSearch } from "../../redux/actions/claimActions";
 import axios from "axios";
 
 const Form = () => {
@@ -25,7 +25,7 @@ const Form = () => {
       )
       .catch((error) => console.log(error));
     dispatch(setClaims(res.data));
-    
+    dispatch(setSearch())
   };
 
   return (
