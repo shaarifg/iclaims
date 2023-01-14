@@ -54,16 +54,20 @@ const ClaimCard = () => {
                     <p>{claim.age}</p>
                   </div>
                   <div className="claim_details">
+                    <h5>Address</h5>
+                    <p>{claim.address}</p>
+                  </div>
+                  <div className="claim_details">
+                    <h5>Phone</h5>
+                    <p>{claim.phone}</p>
+                  </div>
+                  <div className="claim_details">
                     <h5>Created On</h5>
                     <p>{claim.date}</p>
                   </div>
                   <div className="claim_details">
                     <h5>Status</h5>
                     <p>{claim.status}</p>
-                  </div>
-                  <div className="claim_details">
-                    <h5>Address</h5>
-                    <p>{claim.address}</p>
                   </div>
                   <div className="action_buttons">
                     <Link to={`/edit/${claim._id}`}>
