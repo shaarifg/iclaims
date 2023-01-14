@@ -1,9 +1,10 @@
+.wrapper{
+    min-height: 80vh;
+}
 .claim_cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     gap: 1rem;
-    min-height: calc(80vh);
-    /* border: 2px solid red; */
 }
 
 .cards_item {
@@ -21,28 +22,22 @@
     height: max-content;
     max-width: 24rem;
 }
-
 .claim_details {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    /* max-width: 100%; */
 }
 
 .claim_details>h5 {
     width: 100%;
-    /* flex:3; */
 }
 
 .claim_details>p {
-    /* display: inline-block; */
     width: 50rem;
     white-space: nowrap;
     overflow: hidden !important;
     text-overflow: ellipsis;
-    /* border: 2px solid red; */
     text-align: right;
-    /* flex: 7; */
 }
 
 .action_buttons {
@@ -72,11 +67,22 @@
 /* Media Queries*/
 @media screen and (max-width:400px) {
     .claim_cards {
-        justify-items: normal;
+        justify-items: center;
     }
 
     .card_item {
-        max-width: 15rem;
-        height: auto;
+        max-width: 20rem;
+        height: max-content;
+    }
+}
+@media screen and (max-width:365px) {
+    .claim_cards {
+        justify-items: start;
+        border: 1px solid red;
+    }
+
+    .card_item {
+        max-width: 14rem;
+        height: max-content;
     }
 }
