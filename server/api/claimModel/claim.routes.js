@@ -8,7 +8,8 @@ const {
     getCliamsByHospitalName, 
     updateClaim, 
     deleteClaim,
-    getAllClaims} = require('./claim.controller');
+    getAllClaims,
+    getClaimsByName} = require('./claim.controller');
 
 
 //Create a new claim
@@ -48,10 +49,21 @@ router.get('/claim/:id',(req, res)=>{
         res.status(error.status).send(error)
     })
 } )
-    
+
 //* Get all claims for given policy id  
 router.get('/claims/policyId', (req, res)=>{
     getAllClaimsByPolicyId(req.query.policyId)
+    .then((response)=>{
+        res.status(response.status).send(response)
+    })
+    .catch((error)=>{
+        res.status(error.status).send(error)
+    })
+}); 
+    
+//* Get all claims for given Benefeciary's Name  
+router.get('/claims/name', (req, res)=>{
+    getClaimsByName(req.query.name)
     .then((response)=>{
         res.status(response.status).send(response)
     })
@@ -92,7 +104,7 @@ router.put('/claim/:id', (req, res)=>{
 
 
 
-//Delete a claim by claim id 
+//*Delete a claim by claim id 
 router.delete('/claim/:id', (req, res)=>{
     // console.log(req.params.id);
     deleteClaim(req.params.id)

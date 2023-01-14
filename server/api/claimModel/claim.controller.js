@@ -96,17 +96,36 @@ const getCliamsByHospitalName = ({ hospital }) => {
   });
 };
 
+// Function to Get all claims for given hospital name and claim date
+const getClaimsByName = ( name ) => {
+  return new Promise(async (reject, resolve) => {
+    const claims = await claimModel.find({ name: name });
+    // console.log(claim);
+    if (!claims) {
+      reject({ message: "Claims not found 🎈", status: 500 });
+    } else {
+      resolve({
+        message:
+          "FOUND all claims for given Benerficiary's name successfully ✔😊",
+        status: 201,
+        claims: claims,
+      });
+    }
+  });
+};
+
 //Function to update the status of a claim by using its Id
 const updateClaim = (claimId, updateData) => {
   return new Promise(async (reject, resolve) => {
     const updatedClaim = await claimModel.findByIdAndUpdate(claimId, {
       status: updateData.status,
       name: updateData.name,
-      policyId:updateClaim.policyId,
-      hospital:updateClaim.hospital,
-      date:updateClaim.date,
-      age:updateClaim.age
+      policyId: updateClaim.policyId,
+      hospital: updateClaim.hospital,
+      date: updateClaim.date,
+      age: updateClaim.age
     });
+
     // console.log(claim);
     if (!updatedClaim) {
       reject({ message: "Claims not found 🎈", status: 500 });
@@ -144,4 +163,5 @@ module.exports = {
   getCliamsByHospitalName,
   updateClaim,
   deleteClaim,
+  getClaimsByName,
 };
