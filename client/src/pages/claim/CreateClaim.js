@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./assets/createClaim.css";
 
@@ -11,7 +11,8 @@ import BusinessIcon from "@mui/icons-material/Business";
 import PolicyIcon from "@mui/icons-material/Policy";
 import DonutSmallIcon from "@mui/icons-material/DonutSmall";
 import TodayIcon from "@mui/icons-material/Today";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const initialValues = {
   name: "",
   hospital: "",
@@ -25,7 +26,6 @@ const initialValues = {
 
 const CreateClaim = () => {
   const [formData, setFormData] = useState(initialValues);
-  // const [updated, setUpdated] = useState(false);
 
   const postClaim = async (e) => {
     e.preventDefault();
@@ -34,7 +34,10 @@ const CreateClaim = () => {
       .post("http://localhost:8080/api/claims", formData)
       .then((res) => {
         console.log(res.data);
-        console.log(formData);
+        toast.success(res.data.message)
+        // console.log(formData);
+        setFormData(initialValues)
+        // console.log(formData)
       })
       .catch((error) => console.log(error));
   };
@@ -60,6 +63,7 @@ const CreateClaim = () => {
                 type="text"
                 id="hospital"
                 name="hospital"
+                value={formData.hospital}
                 placeholder="Hospital Name"
                 onChange={handleChange}
               />
@@ -73,6 +77,7 @@ const CreateClaim = () => {
                 type="text"
                 id="name"
                 name="name"
+                value={formData.name}
                 placeholder="Beneficiary's Full Name"
                 onChange={handleChange}
               />
@@ -86,6 +91,7 @@ const CreateClaim = () => {
                 type="text"
                 id="age"
                 name="age"
+                value={formData.age}
                 placeholder="Age"
                 onChange={handleChange}
               />
@@ -99,6 +105,7 @@ const CreateClaim = () => {
                 type="text"
                 id="phone"
                 name="phone"
+                value={formData.phone}
                 placeholder="Phone Number"
                 onChange={handleChange}
               />
@@ -112,6 +119,7 @@ const CreateClaim = () => {
                 type="text"
                 id="address"
                 name="address"
+                value={formData.address}
                 placeholder="Address*"
                 onChange={handleChange}
                 required
@@ -125,6 +133,7 @@ const CreateClaim = () => {
                 type="text"
                 id="policyId"
                 name="policyId"
+                value={formData.policyId}
                 placeholder="Policy Id*"
                 onChange={handleChange}
                 required
@@ -137,6 +146,7 @@ const CreateClaim = () => {
               <select
                 name="status"
                 id=""
+                value={formData.status}
                 onChange={handleChange}
                 className="status_select"
               >
@@ -154,6 +164,7 @@ const CreateClaim = () => {
                 type="date"
                 id="date"
                 name="date"
+                value={formData.date}
                 placeholder="Date"
                 onChange={handleChange}
                 required
@@ -163,6 +174,7 @@ const CreateClaim = () => {
           <button className="btn" type="submit">
             Create New Claim
           </button>
+          <ToastContainer/>
         </form>
       </div>
     </section>
