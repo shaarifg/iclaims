@@ -8,6 +8,9 @@ import { setDelete } from "../../redux/actions/claimActions";
 
 import "./assets/claimCards.css";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const ClaimCard = () => {
   const claims = useSelector((state) => state.allClaims.claims.claims);
   const dispatch = useDispatch();
@@ -16,6 +19,7 @@ const ClaimCard = () => {
     await axios
       .delete(`http://localhost:8080/api/claim/${id}`)
       .then((res) => {
+        toast.success(res.data.message)
         dispatch(setDelete());
         console.log(res.data);
       })
@@ -27,7 +31,7 @@ const ClaimCard = () => {
       {claims === undefined ? (
         <Loader />
       ) : (
-        <div>
+        <div className="wrapper">
           <h3>Total Available Claims: {claims.length}</h3>
           <div className="claim_cards">
             {claims.map((claim) => {
@@ -76,6 +80,7 @@ const ClaimCard = () => {
               );
             })}
           </div>
+          <ToastContainer/>
         </div>
       )}
     </>
