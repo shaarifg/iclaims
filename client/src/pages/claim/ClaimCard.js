@@ -61,7 +61,7 @@ const ClaimCard = () => {
                     <h5>Address</h5>
                     <p>{claim.address}</p>
                   </div>
-                  <div className="action_button">
+                  <div className="action_buttons">
                     <Link to={`/edit/${claim._id}`}>
                       <ModeEditOutlineIcon className="action_btn edit_btn" />
                     </Link>
