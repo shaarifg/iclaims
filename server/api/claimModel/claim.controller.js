@@ -116,14 +116,16 @@ const getClaimsByName = ( name ) => {
 
 //Function to update the status of a claim by using its Id
 const updateClaim = (claimId, updateData) => {
+  console.log(updateData)
+
   return new Promise(async (reject, resolve) => {
     const updatedClaim = await claimModel.findByIdAndUpdate(claimId, {
       status: updateData.status,
       name: updateData.name,
-      policyId: updateClaim.policyId,
-      hospital: updateClaim.hospital,
-      date: updateClaim.date,
-      age: updateClaim.age
+      policyId:updateData.policyId,
+      hospital:updateData.hospital,
+      date:updateData.date,
+      age:updateData.age
     });
 
     // console.log(claim);
