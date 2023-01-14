@@ -1,30 +1,17 @@
-.claim_cards{
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-   gap: 1rem;
-   min-height: calc(80vh);
-   border: 2px solid red;
+.claim_cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 1rem;
+    min-height: calc(80vh);
+    /* border: 2px solid red; */
 }
 
 .cards_item {
     display: flex;
     padding: 1rem;
-    
     background-size: cover;
-  }
-  
-  /* @media (min-width: 40rem) {
-    .cards_item {
-      width: 50%;
-    }
-  }
-  
-  @media (min-width: 56rem) {
-    .cards_item {
-      width: 33.3333%;
-    }
-  } */
-  
+}
+
 .card_item {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     padding: 1rem;
@@ -41,12 +28,13 @@
     gap: 1rem;
     /* max-width: 100%; */
 }
-.claim_details>h5{
-    width:  100%;
+
+.claim_details>h5 {
+    width: 100%;
     /* flex:3; */
 }
 
-.claim_details>p{
+.claim_details>p {
     /* display: inline-block; */
     width: 50rem;
     white-space: nowrap;
@@ -68,6 +56,7 @@
     color: white;
     transition: .3s ease-in-out;
 }
+
 .edit_btn:hover {
     background-color: rgb(134, 112, 1);
     color: white;
@@ -79,14 +68,16 @@
     padding: .5rem;
     border-radius: 50%;
 }
+
 /* CSS For Filter Form */
 @media screen and (max-width:400px) {
-    .claim_cards{
+    .claim_cards {
         justify-items: normal;
     }
-    .card_item{
+
+    .card_item {
         max-width: 15rem;
         height: auto;
     }
-    
+
 }
