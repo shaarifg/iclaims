@@ -48,6 +48,7 @@ const EditClaim = () => {
       setFormData(res.data.claim);
     };
     fetchClaim();
+    // eslint-disable-next-line
   }, []);
   return (
     <section className="edit_claim">
