@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import "./assets/createClaim.css";
 
@@ -105,7 +105,7 @@ const CreateClaim = () => {
             <div className="item_input">
               <PhoneAndroidIcon />
               <input
-                type="text"
+                type="tel"
                 id="phone"
                 name="phone"
                 value={formData.phone}
