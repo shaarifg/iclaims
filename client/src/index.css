@@ -40,10 +40,20 @@ p{
   margin: 1rem auto;
   display: block;
 }
+
+@media screen and (max-width:430px) {
+  .section_container{
+    max-width: var(--width-sm);
+  }
+  
+}
 ::selection{
   color: #001122;
   background-color: #F7770F;
 }
+
+
+
 /* 663--tab width for hamburger 
 
 001122
