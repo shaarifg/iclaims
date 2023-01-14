@@ -31,16 +31,13 @@ const EditClaim = () => {
     e.preventDefault();
     await axios
       .put(`http://localhost:8080/api/claim/${id}`, formData)
-      .then((res) => {
-        toast.success(res.message, {
+      .then((res)=>{
+        toast.success(res.data.message, {
           position: toast.POSITION.TOP_RIGHT,
-        });
-        console.log(res.data);
+        })
       })
+      // .then(navigate('/all-claims'))
       .catch((error) => console.log(error));
-    // console.log(res.data.message)
-    setFormData("");
-    navigate("/all-claims");
   };
   useEffect(() => {
     const fetchClaim = async () => {
@@ -91,7 +88,7 @@ const EditClaim = () => {
         <div className="input_item">
           <label htmlFor="date">Date:</label>
           <input
-            type="text"
+            type="date"
             name="date"
             id="policy"
             value={formData.date}
@@ -124,7 +121,7 @@ const EditClaim = () => {
             onClick={() => navigate("/all-claims")}
             sx={{ backgroundColor: "#F7770F" }}
           >
-            All Claims
+            Back
           </Button>
           <Button
             variant="contained"
