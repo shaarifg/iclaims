@@ -13,6 +13,7 @@ import DonutSmallIcon from "@mui/icons-material/DonutSmall";
 import TodayIcon from "@mui/icons-material/Today";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 const initialValues = {
   name: "",
   hospital: "",
@@ -26,7 +27,7 @@ const initialValues = {
 
 const CreateClaim = () => {
   const [formData, setFormData] = useState(initialValues);
-
+  const navigate = useNavigate();
   const postClaim = async (e) => {
     e.preventDefault();
     // console.log(e.target.name);
@@ -34,9 +35,9 @@ const CreateClaim = () => {
       .post("http://localhost:8080/api/claims", formData)
       .then((res) => {
         console.log(res.data);
-        toast.success(res.data.message)
+        toast.success(res.data.message);
         // console.log(formData);
-        setFormData(initialValues)
+        setFormData(initialValues);
         // console.log(formData)
       })
       .catch((error) => console.log(error));
@@ -64,8 +65,9 @@ const CreateClaim = () => {
                 id="hospital"
                 name="hospital"
                 value={formData.hospital}
-                placeholder="Hospital Name"
+                placeholder="Hospital Name*"
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -78,8 +80,9 @@ const CreateClaim = () => {
                 id="name"
                 name="name"
                 value={formData.name}
-                placeholder="Beneficiary's Full Name"
+                placeholder="Beneficiary's Full Name*"
                 onChange={handleChange}
+                required
               />
             </div>
           </div>
@@ -120,9 +123,8 @@ const CreateClaim = () => {
                 id="address"
                 name="address"
                 value={formData.address}
-                placeholder="Address*"
+                placeholder="Address"
                 onChange={handleChange}
-                required
               />
             </div>
           </div>
@@ -145,12 +147,12 @@ const CreateClaim = () => {
               <DonutSmallIcon />
               <select
                 name="status"
-                id=""
                 value={formData.status}
                 onChange={handleChange}
                 className="status_select"
+                required
               >
-                <option value="open">Status</option>
+                <option value="open" required>Status*</option>
                 <option value="open">Open</option>
                 <option value="closed">Closed</option>
                 <option value="In-Progress">In-Progress</option>
@@ -171,10 +173,13 @@ const CreateClaim = () => {
               />
             </div>
           </div>
+          <button className="btn_back" onClick={()=>navigate('/all-claims')}>
+            Back
+          </button>
           <button className="btn" type="submit">
             Create New Claim
           </button>
-          <ToastContainer/>
+          <ToastContainer />
         </form>
       </div>
     </section>
