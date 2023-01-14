@@ -70,3 +70,14 @@
 .btn:hover{
     background: #f26d00;
 }
+
+.btn_back{
+    background: #ac4d00;
+    border: none;
+    padding: .4rem; 
+    cursor: pointer;
+    margin-top: 1rem;
+    color: white;
+    transition: .5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    margin-right: 1rem;
+}
