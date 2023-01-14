@@ -6,7 +6,7 @@ const serverConfig ={
 
 //Database congiguration
 const dbConfig = {
-    mongoUrl: "mongodb+srv://sharifg:mydata@first.sfh7pc2.mongodb.net/claims?retryWrites=true&w=majority"
+    mongoUrl: process.env.DATABASE_URL
 }
 
 const authConfig ={
