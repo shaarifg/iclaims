@@ -2,7 +2,7 @@
   "name": "iclaims",
   "version": "1.0.0",
   "description": "A claim management app built in reactjs and expressjs",
-  "main": "app.js",
+  "main": "bin/www.js",
   "bin": {
     "iclaims": "bin/www.js"
   },
